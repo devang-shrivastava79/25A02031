@@ -113,7 +113,8 @@ nav a:hover {
 }
 
 .hero-img img:hover {
-  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.7);
+  transform: scale(0.97); 
 }
 
 .section {
@@ -144,6 +145,15 @@ h3 { margin: 0 0 8px 0; }
   border-radius: 16px;
   display: block;
 }
+.profile img {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.profile img:hover {
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.7);
+  transform: scale(0.97);  
+}
+
 
 .ulist {
   font-weight: 600;
@@ -193,6 +203,13 @@ h3 { margin: 0 0 8px 0; }
 
 .tags li:hover {
   transform: translateY(-2px);
+}
+.skill-link {
+  color: #e5e7eb;
+  text-decoration: none;
+}
+.skill-link:hover {
+  color: #38bdf8;
 }
 
 .mt { margin-top: 18px; }
@@ -306,7 +323,26 @@ h3 { margin: 0 0 8px 0; }
   .contact-cards { grid-template-columns: 1fr; }
   .hero-text h1 { font-size: 32px; }
 }
+@media (max-width: 560px) {
+  #about .grid-2 {
+    grid-template-columns: 1fr;
+  }
 
+  #about .profile {
+    order: 1;
+  }
+  #about .grid-2 > div:first-child {
+    order: 2;
+  }
+  .hero-img img {
+  width: 85%;          
+  max-width: 340px;    
+  margin: 0 auto;     
+  display: block;
+  border-radius: 16px;
+}
+
+}
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
